@@ -1,7 +1,7 @@
 pipeline {
     agent any
 
-        stage 'Compile Stage')
+        stage 'Compile Stage'
 		{
 
          //   steps {
