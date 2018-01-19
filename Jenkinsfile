@@ -2,31 +2,17 @@ pipeline {
     agent any
 
         stage 'Compile Stage'
-		{
-
-         //   steps {
-               // withMaven(maven : 'maven3.3.9') {
-                 //   bat 'gradle hello'
-              //  }
-          //  }
+	{
+	println("Compile")
         }
 
         stage 'Testing Stage' {
-
-          //  steps {
-              //  withMaven(maven : 'maven3.3.9') {
-               //     bat 'mvn test'
-               // }
-          //  }
+		println("Testing")
         }
 
 
         stage 'Deployment Stage' {
-          //  steps {
-              //  withMaven(maven : 'maven3.3.9') {
-              //      bat 'mvn install'
-               // }
-          //  }
-      //  }
+		println("Deployment")
+          
     }
 }
