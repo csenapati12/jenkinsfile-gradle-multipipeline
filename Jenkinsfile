@@ -4,29 +4,29 @@ pipeline {
     stages {
         stage ('Compile Stage') {
 
-            steps {
+         //   steps {
                // withMaven(maven : 'maven3.3.9') {
                     bat 'gradle hello'
               //  }
-            }
+          //  }
         }
 
         stage ('Testing Stage') {
 
-            steps {
+          //  steps {
               //  withMaven(maven : 'maven3.3.9') {
                //     bat 'mvn test'
                // }
-            }
+          //  }
         }
 
 
         stage ('Deployment Stage') {
-            steps {
+          //  steps {
               //  withMaven(maven : 'maven3.3.9') {
               //      bat 'mvn install'
                // }
-            }
+          //  }
         }
     }
 }
