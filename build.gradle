@@ -1,4 +1,4 @@
-task hello {
+task hello1 {
      
      description 'The hello task greets Gradle by saying "Hello Gradle"'
 
