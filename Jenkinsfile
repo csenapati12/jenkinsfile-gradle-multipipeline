@@ -6,7 +6,7 @@ pipeline {
 
             steps {
                // withMaven(maven : 'maven3.3.9') {
-                    bat 'mvn clean compile'
+                    bat 'gradle hello'
               //  }
             }
         }
@@ -15,7 +15,7 @@ pipeline {
 
             steps {
               //  withMaven(maven : 'maven3.3.9') {
-                    bat 'mvn test'
+               //     bat 'mvn test'
                // }
             }
         }
@@ -24,7 +24,7 @@ pipeline {
         stage ('Deployment Stage') {
             steps {
               //  withMaven(maven : 'maven3.3.9') {
-                    bat 'mvn install'
+              //      bat 'mvn install'
                // }
             }
         }
