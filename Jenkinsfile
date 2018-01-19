@@ -1,18 +1,14 @@
-pipeline {
-    agent any
-
-        stage 'Compile Stage'
-	{
-	println("Compile")
+node() 
+{   
+       stage 'Compile Stage'
+	{	
+		println("Compile")
         }
-
-        stage 'Testing Stage' {
+        stage 'Testing Stage' 
+	{
 		println("Testing")
         }
-
-
         stage 'Deployment Stage' {
-		println("Deployment")
-          
-    }
+		println("Deployment")          
+    	}
 }
