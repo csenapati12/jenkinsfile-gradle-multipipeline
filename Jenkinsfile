@@ -3,7 +3,7 @@ node()
        stage 'Compile Stage'
 	
 		println("Compile");
-	 bat 'mvn clean compile'
+	 bat 'gradle hello'
         
         stage 'Testing Stage' 
 	
