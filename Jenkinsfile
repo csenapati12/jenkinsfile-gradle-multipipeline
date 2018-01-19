@@ -3,6 +3,7 @@ node()
        stage 'Compile Stage'
 	
 		println("Compile");
+	 bat 'mvn clean compile'
         
         stage 'Testing Stage' 
 	
