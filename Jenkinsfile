@@ -2,11 +2,12 @@ pipeline {
     agent any
 
     stages {
-        stage ('Compile Stage') {
+        stage 'Compile Stage' 
+		{
 
          //   steps {
                // withMaven(maven : 'maven3.3.9') {
-                    bat 'gradle hello'
+                 //   bat 'gradle hello'
               //  }
           //  }
         }
