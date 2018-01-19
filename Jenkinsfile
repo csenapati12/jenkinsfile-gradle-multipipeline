@@ -8,7 +8,7 @@ node()
 	
 		println("Testing");
         
-        stage 'Deployment Stage' {
+        stage 'Deployment Stage' 
 		println("Deployment") ;         
     	
 }
