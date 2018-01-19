@@ -1,7 +1,7 @@
 pipeline {
     agent any
 
-        stage ('Compile Stage') 
+        stage 'Compile Stage')
 		{
 
          //   steps {
@@ -11,7 +11,7 @@ pipeline {
           //  }
         }
 
-        stage ('Testing Stage') {
+        stage 'Testing Stage' {
 
           //  steps {
               //  withMaven(maven : 'maven3.3.9') {
@@ -21,7 +21,7 @@ pipeline {
         }
 
 
-        stage ('Deployment Stage') {
+        stage 'Deployment Stage' {
           //  steps {
               //  withMaven(maven : 'maven3.3.9') {
               //      bat 'mvn install'
