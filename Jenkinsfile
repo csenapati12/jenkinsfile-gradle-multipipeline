@@ -1,6 +1,6 @@
-node() 
-{   
-      stages {
+pipeline {
+    agent { label 'master' }
+    stages {
        stage('build') {
           steps {
              bat 'cd C:/altisource/software-dump/gradle-4.1-bin/practice'
@@ -12,6 +12,5 @@ node()
              echo 'not using shell'
           }
        }
-    }       
-    	
+    }
 }
