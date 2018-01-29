@@ -47,12 +47,23 @@ def masterBranch()
 def featureBranch() 
 {
  echo "inside FEATURE"
+	stage 'Prepare'
+	loadProperties()
 	stage 'Checkout'
 	checkout_code()
 	stage 'Build'
 	build_code()
 }
-
+def loadProperties() {
+	echo "Inside Prepare"
+   properties = null
+       // checkout scm
+        properties = new Properties()
+        File propertiesFile = new File("${workspace}/gradle.properties")
+        properties.load(propertiesFile.newDataInputStream())
+        echo "Immediate one ${maven}"
+  
+}
 def checkout_code()
 	{
 		echo "checkout_code"
