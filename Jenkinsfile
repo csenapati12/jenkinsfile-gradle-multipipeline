@@ -49,7 +49,25 @@ def masterBranch()
 def featureBranch() 
 {
  echo "inside FEATURE"
+	stage 'Checkout'
+	checkout_code()
+	stage 'Build'
+	build_code()
 }
+
+def checkout_code()
+	{
+		echo "checkout_code"
+		checkout scm
+	}
+def build_code()
+	{
+	 echo "***********Building Code************"  
+          echo "*******getting value ${maven}*********"
+          bat 'cd C:/learning/software-dump/gradle-4.1-bin/practice'
+          bat 'gradle hello1'   
+    	}
+	} 
 
 
 	 
