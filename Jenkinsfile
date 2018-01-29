@@ -36,8 +36,20 @@ node()
 		}	
  }
 
+def developBranch() 
+{
+ echo "inside DEVELOP"
+}
 
+def masterBranch() 
+{
+ echo "inside MASTER"
+}
 
+def featureBranch() 
+{
+ echo "inside FEATURE"
+}
 
 
 	 
