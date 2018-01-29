@@ -1,12 +1,10 @@
 node()
 {
     try	{
-	    stage'select the build type'
-	    echo  "Branch Name is ${env.BRANCH_NAME}"
+	         echo  'Branch Name is ${env.BRANCH_NAME}'
 	        if (env.BRANCH_NAME == 'develop') 
 			{
 			 print "Building the develop branch "
-			//calling the function developBranch if develop branch is getting built
 			 developBranch()
 			}
 		
