@@ -1,7 +1,7 @@
 properties = null
 def loadProperties() {
     node {
-        checkout scm
+       // checkout scm
         properties = new Properties()
         File propertiesFile = new File("${workspace}/gradle.properties")
         properties.load(propertiesFile.newDataInputStream())
