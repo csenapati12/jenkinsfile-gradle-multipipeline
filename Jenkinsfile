@@ -9,23 +9,17 @@ def loadProperties() {
   
 }
 
-pipeline {
-    agent { label 'master' }
-    stages {
-	    stage ('Prepare') {
-               steps {               
-                    loadProperties()
-		   echo "One ${maven} and Second ${java}"               
-            }
-        }       
-             stage('Build') {
-                 steps {
-	            echo "***********Building Code************"  
-		    echo "*******getting value ${maven}*********"
-                    bat 'cd C:/learning/software-dump/gradle-4.1-bin/practice'
-                    bat 'gradle hello1'     
-           }
-       }
-	 
-    }
+node {
+	stage 'Prepare'{
+	loadProperties()
+	echo "One ${maven} and Second ${java}"
+	}
+	stage 'Build'{
+	  echo "***********Building Code************"  
+          echo "*******getting value ${maven}*********"
+          bat 'cd C:/learning/software-dump/gradle-4.1-bin/practice'
+          bat 'gradle hello1'   
+	}
+
 }
+	 
