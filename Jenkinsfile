@@ -57,7 +57,7 @@ def featureBranch()
 def loadProperties() {
 	echo "Inside Prepare"
    properties = null
-       // checkout scm
+        checkout scm
         properties = new Properties()
         File propertiesFile = new File("${workspace}/gradle.properties")
         properties.load(propertiesFile.newDataInputStream())
@@ -67,7 +67,7 @@ def loadProperties() {
 def checkout_code()
 	{
 		echo "checkout_code"
-		checkout scm
+		//checkout scm
 	}
 def build_code()
 	{
