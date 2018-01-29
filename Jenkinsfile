@@ -6,7 +6,7 @@ node()
 	string(name: 'Greeting', defaultValue: 'Hello', description: 'How should I greet the world?')
     }
     try	{
-	         echo  "Branch Name is ${env.BRANCH_NAME}"
+	        
 	        if (env.BRANCH_NAME == 'develop') 
 			{
 			 print "Building the develop branch "
@@ -57,7 +57,7 @@ def featureBranch()
 	stage 'Checkout'
 	checkout_code()
 	stage 'Build'
-	build_code()
+	//build_code()
 }
 def loadProperties() {
 	echo "Inside Prepare"
@@ -66,9 +66,13 @@ def loadProperties() {
         checkout scm
 	echo "Immediate one ${userFlag}"
 	echo "${params.Greeting} World!"
-        properties = new Properties()
-        File propertiesFile = new File("${workspace}/gradle.properties")
-        properties.load(propertiesFile.newDataInputStream())
+	 echo  "Branch Name is ${env.BRANCH_NAME}"
+       // properties = new Properties()
+       // File propertiesFile = new File("${workspace}/gradle.properties")
+       // properties.load(propertiesFile.newDataInputStream())
+	withMaven(maven: 'apache Maven 3.3.9'){
+	sh 'mvn clean compile'
+	}
        
   
 }
@@ -81,8 +85,8 @@ def build_code()
 	{
 	 echo "***********Building Code************"  
           //echo "*******getting value ${maven}*********"
-          bat 'cd C:/learning/software-dump/gradle-4.1-bin/practice'
-          bat 'gradle hello1'   
+          sh 'cd C:/learning/software-dump/gradle-4.1-bin/practice'
+          sh 'gradle hello1'   
 }
 
 
