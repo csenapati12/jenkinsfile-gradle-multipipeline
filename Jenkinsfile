@@ -1,12 +1,12 @@
 properties = null
 def loadProperties() {
-    node {
+   
        // checkout scm
         properties = new Properties()
         File propertiesFile = new File("${workspace}/gradle.properties")
         properties.load(propertiesFile.newDataInputStream())
         echo "Immediate one ${maven}"
-    }
+  
 }
 
 pipeline {
