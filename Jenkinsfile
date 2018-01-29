@@ -1,16 +1,28 @@
+properties = null
+def loadProperties() {
+    node {
+        checkout scm
+        properties = new Properties()
+        File propertiesFile = new File("${workspace}/gradle.properties")
+        properties.load(propertiesFile.newDataInputStream())
+        echo "Immediate one ${maven}"
+    }
+}
+
 pipeline {
     agent { label 'master' }
     stages {
 	    
-        stage('Clone') {
-          steps {
-	  echo "******************Cloning code **********"
-            checkout scm
-          }
-       }
+       // stage('Clone') {
+       //   steps {
+	//  echo "******************Cloning code **********"
+       //     checkout scm
+      //    }
+     //  }
        stage('Build') {
           steps {
-	     echo '***********Building Code************'  
+	     echo "***********Building Code************"  
+		  echo "*******getting value ${maven}*********"
              bat 'cd C:/learning/software-dump/gradle-4.1-bin/practice'
              bat 'gradle hello1'              
             
