@@ -12,7 +12,16 @@ def loadProperties() {
 pipeline {
     agent { label 'master' }
     stages {
-	    
+	    stage ('Prepare') {
+            agent any
+
+            steps {
+                script {
+                    loadProperties()
+			echo "One ${maven} and Second ${java}"
+                }
+            }
+        }
        // stage('Clone') {
        //   steps {
 	//  echo "******************Cloning code **********"
