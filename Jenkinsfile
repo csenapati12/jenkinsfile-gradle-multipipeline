@@ -56,6 +56,9 @@ def featureBranch()
 }
 def loadProperties() {
 	echo "Inside Prepare"
+parameters {
+        booleanParam(defaultValue: false, description: '', name: 'userFlag')
+    }
    properties = null
         checkout scm
         properties = new Properties()
