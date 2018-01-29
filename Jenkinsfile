@@ -63,11 +63,10 @@ def checkout_code()
 def build_code()
 	{
 	 echo "***********Building Code************"  
-          echo "*******getting value ${maven}*********"
+          //echo "*******getting value ${maven}*********"
           bat 'cd C:/learning/software-dump/gradle-4.1-bin/practice'
           bat 'gradle hello1'   
-    	}
-	} 
+}
 
 
 	 
