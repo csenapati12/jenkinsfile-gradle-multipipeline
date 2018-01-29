@@ -8,14 +8,12 @@ pipeline {
             checkout scm
           }
        }
-       stage('build') {
+       stage('Build') {
           steps {
-             bat 'cd C:/altisource/software-dump/gradle-4.1-bin/practice'
-             bat 'gradle hello1'
-              //Created new branch
-			  //Merging with the master
-               echo 'Example'          
-             echo 'not using shell'
+	     echo '***********Building Code************'  
+             bat 'cd C:/learning/software-dump/gradle-4.1-bin/practice'
+             bat 'gradle hello1'              
+            
           }
        }
 	 
