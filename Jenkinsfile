@@ -1,6 +1,8 @@
 node()
 {
 	
+	def branchName = getCurrentBranch()
+        echo 'My branch is' + branchName
 	parameters {
         booleanParam(defaultValue: false, description: '', name: 'userFlag')
 	string(name: 'Greeting', defaultValue: 'Hello', description: 'How should I greet the world?')
