@@ -6,8 +6,8 @@ node()
 	string(name: 'Greeting', defaultValue: 'Hello', description: 'How should I greet the world?')
     }
     try	{
-	   // echo  "Branch Name is ${BRANCH_NAME}" 
-	        if ($BRANCH_NAME == 'develop') 
+	        echo  "Branch Name is ${env.BRANCH_NAME}" 
+	        if (env.BRANCH_NAME == 'develop') 
 			{
 			 print "Building the develop branch "
 			 developBranch()
