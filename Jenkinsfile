@@ -1,5 +1,9 @@
 node()
 {
+	
+	parameters {
+        booleanParam(defaultValue: false, description: '', name: 'userFlag')
+    }
     try	{
 	         echo  "Branch Name is ${env.BRANCH_NAME}"
 	        if (env.BRANCH_NAME == 'develop') 
@@ -56,15 +60,14 @@ def featureBranch()
 }
 def loadProperties() {
 	echo "Inside Prepare"
-parameters {
-        booleanParam(defaultValue: false, description: '', name: 'userFlag')
-    }
-   properties = null
+
+        properties = null
         checkout scm
+	echo "Immediate one ${userFlag}"
         properties = new Properties()
         File propertiesFile = new File("${workspace}/gradle.properties")
         properties.load(propertiesFile.newDataInputStream())
-        echo "Immediate one ${maven}"
+       
   
 }
 def checkout_code()
