@@ -1,6 +1,6 @@
-properties = null
+
 def loadProperties() {
-   
+   properties = null
        // checkout scm
         properties = new Properties()
         File propertiesFile = new File("${workspace}/gradle.properties")
@@ -13,29 +13,18 @@ pipeline {
     agent { label 'master' }
     stages {
 	    stage ('Prepare') {
-            agent any
-
-            steps {
-               
+               steps {               
                     loadProperties()
-			echo "One ${maven} and Second ${java}"
-               
+		   echo "One ${maven} and Second ${java}"               
             }
-        }
-       // stage('Clone') {
-       //   steps {
-	//  echo "******************Cloning code **********"
-       //     checkout scm
-      //    }
-     //  }
-       stage('Build') {
-          steps {
-	     echo "***********Building Code************"  
-		  echo "*******getting value ${maven}*********"
-             bat 'cd C:/learning/software-dump/gradle-4.1-bin/practice'
-             bat 'gradle hello1'              
-            
-          }
+        }       
+             stage('Build') {
+                 steps {
+	            echo "***********Building Code************"  
+		    echo "*******getting value ${maven}*********"
+                    bat 'cd C:/learning/software-dump/gradle-4.1-bin/practice'
+                    bat 'gradle hello1'     
+           }
        }
 	 
     }
