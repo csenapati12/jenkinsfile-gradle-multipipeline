@@ -5,7 +5,7 @@ pipeline {
         stage('Clone') {
           steps {
 	  echo "******************Cloning code **********"
-            chekout scm
+            checkout scm
           }
        }
        stage('build') {
