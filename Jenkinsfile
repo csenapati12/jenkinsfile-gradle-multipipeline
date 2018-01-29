@@ -58,8 +58,9 @@ def featureBranch()
 	checkout_code()
 	stage 'Build'
 	//withMaven(maven: 'apache Maven 3.3.9'){
-	sh 'mvn clean compile'
+	//sh 'mvn clean compile'
 	//}
+	sh 'gradle hello1'
 }
 def loadProperties() {
 	echo "Inside Prepare"
