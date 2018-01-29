@@ -57,9 +57,9 @@ def featureBranch()
 	stage 'Checkout'
 	checkout_code()
 	stage 'Build'
-	withMaven(maven: 'apache Maven 3.3.9'){
+	//withMaven(maven: 'apache Maven 3.3.9'){
 	sh 'mvn clean compile'
-	}
+	//}
 }
 def loadProperties() {
 	echo "Inside Prepare"
