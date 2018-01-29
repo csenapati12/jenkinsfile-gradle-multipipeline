@@ -6,8 +6,8 @@ node()
 	string(name: 'Greeting', defaultValue: 'Hello', description: 'How should I greet the world?')
     }
     try	{
-	        
-	        if (env.BRANCH_NAME == 'develop') 
+	    echo  "Branch Name is ${BRANCH_NAME}" 
+	        if ($BRANCH_NAME == 'develop') 
 			{
 			 print "Building the develop branch "
 			 developBranch()
@@ -69,7 +69,7 @@ def loadProperties() {
         checkout scm
 	echo "Immediate one ${userFlag}"
 	echo "${params.Greeting} World!"
-	 echo  "Branch Name is ${env.BRANCH_NAME}"
+	echo  "Branch Name is ${BRANCH_NAME}"
        // properties = new Properties()
        // File propertiesFile = new File("${workspace}/gradle.properties")
        // properties.load(propertiesFile.newDataInputStream())
