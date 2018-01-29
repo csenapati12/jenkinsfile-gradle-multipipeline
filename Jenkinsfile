@@ -1,7 +1,7 @@
 node()
 {
     try	{
-	         echo  'Branch Name is ${env.BRANCH_NAME}'
+	         echo  "Branch Name is ${env.BRANCH_NAME}"
 	        if (env.BRANCH_NAME == 'develop') 
 			{
 			 print "Building the develop branch "
