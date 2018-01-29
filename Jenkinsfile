@@ -57,7 +57,9 @@ def featureBranch()
 	stage 'Checkout'
 	checkout_code()
 	stage 'Build'
-	//build_code()
+	withMaven(maven: 'apache Maven 3.3.9'){
+	sh 'mvn clean compile'
+	}
 }
 def loadProperties() {
 	echo "Inside Prepare"
@@ -70,9 +72,7 @@ def loadProperties() {
        // properties = new Properties()
        // File propertiesFile = new File("${workspace}/gradle.properties")
        // properties.load(propertiesFile.newDataInputStream())
-	withMaven(maven: 'apache Maven 3.3.9'){
-	sh 'mvn clean compile'
-	}
+	
        
   
 }
@@ -85,8 +85,8 @@ def build_code()
 	{
 	 echo "***********Building Code************"  
           //echo "*******getting value ${maven}*********"
-          sh 'cd C:/learning/software-dump/gradle-4.1-bin/practice'
-          sh 'gradle hello1'   
+         // sh 'cd C:/learning/software-dump/gradle-4.1-bin/practice'
+          //sh 'gradle hello1'   
 }
 
 
