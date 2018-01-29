@@ -16,10 +16,10 @@ pipeline {
             agent any
 
             steps {
-                script {
+               
                     loadProperties()
 			echo "One ${maven} and Second ${java}"
-                }
+               
             }
         }
        // stage('Clone') {
