@@ -1,6 +1,12 @@
 pipeline {
     agent { label 'master' }
     stages {
+	    
+        stage('Clone') {
+          steps {
+            chkout scm
+          }
+       }
        stage('build') {
           steps {
              bat 'cd C:/altisource/software-dump/gradle-4.1-bin/practice'
@@ -11,5 +17,6 @@ pipeline {
              echo 'not using shell'
           }
        }
+	 
     }
 }
