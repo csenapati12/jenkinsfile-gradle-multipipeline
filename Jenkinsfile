@@ -3,6 +3,7 @@ node()
 	
 	parameters {
         booleanParam(defaultValue: false, description: '', name: 'userFlag')
+	string(name: 'Greeting', defaultValue: 'Hello', description: 'How should I greet the world?')
     }
     try	{
 	         echo  "Branch Name is ${env.BRANCH_NAME}"
@@ -64,6 +65,7 @@ def loadProperties() {
         properties = null
         checkout scm
 	echo "Immediate one ${userFlag}"
+	echo "${params.Greeting} World!"
         properties = new Properties()
         File propertiesFile = new File("${workspace}/gradle.properties")
         properties.load(propertiesFile.newDataInputStream())
